@@ -1,0 +1,86 @@
+para iniciar el proceso de subida de un proyecto primero debes ubicarte en la carpeta correspondiente con todo lo que deseas subir.
+ejemplo:
+
+ * "cd desafios/modulo3/proyecto3"
+
+CD = change direction
+
+para asegurarno que estamos parados en la carpeta corrcta en dentro de la terminal, usamos el comando LS.
+una vez situados en la carpeta, usamos el siguente comando:
+
+ * "git init" 
+
+Esto iniciara git en la carpeta que tenemos selecionada,
+lo que significa que solo usara desde acqui hacia abajo en la raiz de carpetas.
+
+el siguente paso es chequear que nos encontramos en la rama main la cual es la que sube el proyecto, para ello utilizamos 
+
+ * "git branch"
+
+este comando mostrara las ramas existentes, en caso que no muestre nada, debemos crear la rama main con el sig comando
+
+ * "git checkout -b main"
+
+una vez situados en la rama main, debemos identificar la direccion de el repositorio y indicarse a la guit, con el comando 
+git remote add origin (aqui va la direccion de git), quedando como ejemplo:
+
+ * git remote add origin git@github.com:Cristian-Aguilera-316/Desafiolatam_M3D3.git
+
+para chequear que la direccion que ingresamos  esta bien ingresada y ademas es la correcta:
+
+ * "git remote -v"
+
+devolviendo la terminal algo como esto: 
+
+origin  git@github.com:Cristian-Aguilera-316/Desafiolatam_M3D3.git (fetch)
+origin  git@github.com:Cristian-Aguilera-316/Desafiolatam_M3D3.git (push)
+
+una vez chequeado lo anterior damos paso a el proceso de subida. para ello usamos el comando git status para verificar el
+estado de los packetes que van a subirse, los cuales deberian mostrarse en rojo ya que no estan addjunto a un paquete.
+para adjuntarlos a un pack usamos el sig comando:
+
+ * "git add ." 
+
+ya utilizado el comando git add . realizamos nuevamente un git status y verificamos que el el color de el pack cambio a verde,
+simbolizando que todos los cambios han sido guardados en el pack.
+
+para el sig paso se debe hacer un "commit" o comentario el cual identifica modificaciones a modo de titulo en le cambio de la 
+version de el proyecto.
+para ello usamos el sig comando 
+
+ * "git commit -m "creacion del proyecto" "
+arrojando un listado de eticketado como el que se muestra a continuacion:
+
+
+[main (root-commit) 46e53a3] creacion del proyecto
+ 8 files changed, 171 insertions(+)
+ create mode 100644 req1/req1.js
+ create mode 100644 req2/req2.js
+ create mode 100644 req3/assets/js/script.js
+ create mode 100644 req3/index.html
+ create mode 100644 req4/4.1-4.2/assets/js/script.js
+ create mode 100644 req4/4.1-4.2/index.html
+ create mode 100644 req4/4.3-4.4/assets/js/script.js
+ create mode 100644 req4/4.3-4.4/index.html
+
+como paso final, es necesario dar la orden de subida de el pack, para ello es necesario utilizar el sig comando: 
+ 
+* "git push -u origin main"
+
+dando como resultado lo sig:
+Enumerating objects: 22, done.
+Counting objects: 100% (22/22), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (22/22), 3.58 KiB | 916.00 KiB/s, done.
+Total 22 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:Cristian-Aguilera-316/Desafiolatam_M3D3.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+y con esto finaliza el proceso de subida de un proyecto.
+
+  
+
+ 
