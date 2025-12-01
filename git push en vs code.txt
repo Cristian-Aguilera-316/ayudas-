@@ -35,6 +35,10 @@ devolviendo la terminal algo como esto:
 origin  git@github.com:Cristian-Aguilera-316/Desafiolatam_M3D3.git (fetch)
 origin  git@github.com:Cristian-Aguilera-316/Desafiolatam_M3D3.git (push)
 
+para cambiar la URL del remote (fetch & push a la vez)
+
+git remote set-url origin https://github.com/TU-USUARIO/NUEVO-REPO.git
+
 una vez chequeado lo anterior damos paso a el proceso de subida. para ello usamos el comando git status para verificar el
 estado de los packetes que van a subirse, los cuales deberian mostrarse en rojo ya que no estan addjunto a un paquete.
 para adjuntarlos a un pack usamos el sig comando:
