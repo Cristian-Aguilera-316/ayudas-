@@ -86,5 +86,44 @@ branch 'main' set up to track 'origin/main'.
 y con esto finaliza el proceso de subida de un proyecto.
 
   
+**// para hacer un deploy de una pag con react y vue en github  y no se ve o se ve en blanco.//**
 
+paso 1: primero se modifica el archivo vite.config.jsdejandolo asi 
+
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+  base: '/Desafiolatam_M4D2/',   // 👈 aqui va el nombre de el repo donde se a hacer el deploy
+  build: {
+    outDir: 'docs'               // 👈 para que el build vaya a la carperta docs
+  }
+})
  
+paso 2: se realiza una reinstalacion de dependencias 
+
+npm install
+
+luego se hace un run de la build para generar la carpeta docs
+
+npm run build
+
+paso 3: se realizan los cambios en el repo de github
+
+git add docs vite.config.js
+git commit -m "Build para GitHub Pages en M4D2"
+git push origin main
+
+paso 4: Configura GitHub Pages en este repo
+
+En settings de el repositorio Ve a Settings → Pages (en el menú lateral, no en la pestaña General).
+Configura:
+
+Source: Deploy from a branch
+Branch: main
+Folder: /docs
+
+paso 5: revisa la paguina de pages, 
+
+**//en el caso de que no funcione, debe hacerse el cambio nuevamente eliminando la carpeta docs y realizando todos los pasos nuevamente//**
